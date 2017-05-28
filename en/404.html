@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Especialistas em QGIS, o melhor e mais usado software SIG Open Source">
+    <meta name="author" content="NaturalGIS">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="NaturalGIS, Open Source GIS. Leader in solutions based on QGIS: training, development, support" lang="en" name="description" />
+    <meta content="NaturalGIS, SIG Open Source. Empresa líder em soluções baseadas em QGIS: formação, desenvolvimento, suporte" lang="pt_PT" name="description" />
+    <meta content="NaturalGIS, SIG Open Source. Empresa líder em soluções baseadas em QGIS: formação, desenvolvimento, suporte" lang="pt_BR" name="description" />
+    <meta content="Open Source, Free Software, Software Livre, Software Aberto, GIS, SIG, QGIS, Quantum GIS, GRASS, SAGA, OTB, PostGIS, PostgreSQL, OsGeo, OGC, support, bug fixing, migration, suporte, assistência, resolução bugs, migração, development, desenvolvimento, programação, training courses, formação, cursos, WebGIS, Web Mapping" name="keywords" />
+
+    <title>NaturalGIS</title>
+
+     <!-- core CSS -->
+    <link href="http://www.naturalgis.pt/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/animate.min.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/prettyPhoto.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/main.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="http://www.naturalgis.pt/images/ico/favicon.ico">
+    <!--
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    -->
+    
+<script>
+var anchor = location.hash;
+var pagename = location.href.split("/").slice(-1);
+</script>  
+</head><!--/head-->
+
+<body class="homepage">
+<?php include_once("analyticstracking.php") ?>
+    <header id="header">
+
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.naturalgis.pt/en/index.html"><img src="http://www.naturalgis.pt/images/naturalgis_small.png" alt="NaturalGIS" style="margin-top:-10px; margin-bottom: 10px;"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li style="margin-right:-5px;" <?php if (basename($_SERVER['PHP_SELF']) == 'index.html') {echo 'class="active"';}?>><a href="http://www.naturalgis.pt/en/index.html">Home</a></li>
+                        <li style="margin-right:-5px;" <?php if (basename($_SERVER['PHP_SELF']) == 'who.html') {echo 'class="active"';}?>><a href="http://www.naturalgis.pt/en/who.html">About us</a></li>
+                       <script>
+                        if (anchor == '#services') {
+                        document.write('<li style=\"margin-right:-5px;\" class=\"active\"><a href=\"http://www.naturalgis.pt/en/index.html#services\">Services</a></li>')
+                        } else {
+                        document.write('<li style=\"margin-right:-5px;\"><a href=\"http://www.naturalgis.pt/en/index.html#services\">Services</a></li>')
+                        }
+                       </script> 
+                        <li style="margin-right:-5px;" class="dropdown <?php if ((basename($_SERVER['PHP_SELF']) == 'subscribe.html') OR (basename($_SERVER['PHP_SELF']) == 'training.html')) {echo 'active';}?>">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Training <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li <?php if (basename($_SERVER['PHP_SELF']) == 'training.html') {echo 'class="active"';}?>><a href="http://www.naturalgis.pt/en/training.html">Contents</a></li>
+                                <li <?php if (basename($_SERVER['PHP_SELF']) == 'calendar.html') {echo 'class="active"';}?>><a href="http://www.naturalgis.pt/en/calendar.html">Calendar</a></li>
+                                <li <?php if (basename($_SERVER['PHP_SELF']) == 'subscribe.html') {echo 'class="active"';}?>><a href="http://www.naturalgis.pt/en/subscribe.html">Subscribe</a></li>
+                            </ul>
+                        </li>
+                        <li style="margin-right:-5px;"><a href="http://www.naturalgis.pt/blog/">Blog</a></li> 
+                        <li style="margin-right:-5px;" <?php if (basename($_SERVER['PHP_SELF']) == 'contacts.html') {echo 'class="active"';}?>><a href="http://www.naturalgis.pt/en/contacts.html">Contacts</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+
+    <section id="error" class="container text-center">
+        <h1>404, Page not found</h1>
+        <p>The Page you are looking for doesn't exist or an other error occurred.</p>
+        <a class="btn btn-primary" href="index.html">GO BACK TO THE HOMEPAGE</a>
+    </section><!--/#error-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    Site created with <a target="_blank" href="http://shapebootstrap.net/" title="Bootstrap"><b>Bootstrap</b></a>.<br>© Copyright 2015, NaturalGIS (NIF PT508912032)
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                            <ul style="margin-left:auto;marign-right:auto;font-size:30px;">
+                                <li><a href="https://www.facebook.com/naturalgis"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/naturalgis"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/naturalgis"><i class="fa fa-linkedin"></i></a></li> 
+                            </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="http://www.naturalgis.pt/js/jquery.js"></script>
+    <script src="http://www.naturalgis.pt/js/bootstrap.min.js"></script>
+    <script src="http://www.naturalgis.pt/js/jquery.prettyPhoto.js"></script>
+    <script src="http://www.naturalgis.pt/js/jquery.isotope.min.js"></script>
+    <script src="http://www.naturalgis.pt/js/main.js"></script>
+    <script src="http://www.naturalgis.pt/js/wow.min.js"></script>
+
+</body>
+</html>

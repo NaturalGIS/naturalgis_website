@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: postgis | NaturalGIS Blog]]></title>
+  <link href="http://www.naturalgis.pt/categories/postgis/atom.xml" rel="self"/>
+  <link href="http://www.naturalgis.pt/"/>
+  <updated>2015-03-18T15:38:05+00:00</updated>
+  <id>http://www.naturalgis.pt/</id>
+  <author>
+    <name><![CDATA[naturalgis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A QGIS plugin to run (common) spatial queries with PostGIS]]></title>
+    <link href="http://www.naturalgis.pt/2015/02/28/a-qgis-plugin-to-run-common-spatial-queries-with-postgis/"/>
+    <updated>2015-02-28T12:26:17+00:00</updated>
+    <id>http://www.naturalgis.pt/2015/02/28/a-qgis-plugin-to-run-common-spatial-queries-with-postgis</id>
+    <content type="html"><![CDATA[<p><span style="text-align:justify"></p>
+
+<p>QGIS <a title="QGIS Processing Toolbox" href="http://docs.qgis.org/2.6/en/docs/training_manual/processing/index.html" target="_blank"><strong>
+Processing toolbox</strong></a> is extremely flexible and it allows easily to implement QGIS tools (with a GUI) that
+are based on command line utilities (see  
+<a title="New QGIS geoprocessing tools" href="http://www.naturalgis.pt/blog/2015/02/27/new-geoprocessing-tools-in-the-qgis-processing-toolbox/">
+<strong>this</strong></a> and 
+<a title="Import vectors in PostGIS, the fast way" href="http://www.naturalgis.pt/blog/2015/02/27/a-new-qgis-tool-based-on-ogr2ogr-to-import-vectors-in-postgis/">
+<strong>this</strong></a>).</p>
+
+
+<p>When the underlying command line program is 
+<a title="ogr2ogr" href="http://www.gdal.org/ogr2ogr.html" target="_blank"><strong>ogr2ogr</strong></a> 
+(or any other <a title="GDAL/OGR" href="http://www.gdal.org/" target="_blank"><strong>GDAL/OGR</strong></a> utility) 
+possibilities become endeless. For example <strong>ogr2ogr</strong> can be used to convert formats or run arbitrary (Spatial) SQL queries.</p>
+
+
+<p>One possibility is to run Spatial SQL queries using input PostGIS layers and getting as output a PostGIS layer. The intersting
+bit is that the Spatial SQL query will be run <strong>by the server/machine</strong> (where the input layers are stored), 
+so possibly <strong>not</strong> by the destkop machine where you are running ogr2ogr.</p>
+
+
+<p>Usually to run a (Spatial) SQL query in PostGIS a user would open one of the many SQL shells available (PgAdmin, QGIS DB Manager,
+phppgadmin, psql, etc.) and run something like the following:</p>
+
+
+<p><br>
+<code>
+CREATE TABLE dissolved AS<br>
+SELECT attribute1,(ST_Dump(ST_Union(a.geom))).geom::geometry(Polygon,4326) as geom<br>
+FROM input_table a<br>
+GROUP BY attribute1;
+</code>
+<br>
+<br></p>
+
+<p>and that is ok for us geo-geeks, but what about average Jane/Joe?</p>
+
+
+<p>Isn&#8217;t this much easier?</p>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/dissolve.png" alt="Dissolve PostGIS polygons">
+<figcaption style="font-size:10px;"><strong><em>Dissolve PostGIS polygons</em></strong></figcaption>
+</figure>
+<br></p>
+
+<p>With <a title="A QGIS plugin to allow users do geoprocessing operations with PostGIS input layers"  
+href="https://github.com/NaturalGIS/postgis_geoprocessing" target="_blank">this plugin</a> for the QGIS Processing 
+toolbox (available in the official QGIS plugin repository) we aim to bring into QGIS a set of tools to allow basic PostGIS users
+to run common queries (Dissolve, Clip, Difference, etc.), using as input PostGIS layer and getting as output PostGIS layer(s).</p>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/postgisprocessing.png" alt="PostGIS QGIS Processing tools">
+<figcaption style="font-size:10px;"><strong><em>PostGIS QGIS Processing tools</em></strong></figcaption>
+</figure></p>
+
+<p>Please note that the plugin is still in the early stages of development and that it will be greatly improved once
+the Processing toolbox will support features like multi-attribute selection, adding to (QGIS) map output layers other than shapefiles, and
+others.</p>
+
+
+<p></span></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New geoprocessing tools in the QGIS Processing toolbox]]></title>
+    <link href="http://www.naturalgis.pt/2015/02/27/new-geoprocessing-tools-in-the-qgis-processing-toolbox/"/>
+    <updated>2015-02-27T19:25:07+00:00</updated>
+    <id>http://www.naturalgis.pt/2015/02/27/new-geoprocessing-tools-in-the-qgis-processing-toolbox</id>
+    <content type="html"><![CDATA[<p><span style="text-align:justify"></p>
+
+<p><a title="QGIS" href="http://www.qgis.org/" target="_blank"><strong>QGIS</strong></a> 2.8 was not officially announced yet and, 
+as always happens in the QGIS project, new features are already being added to QGIS master, aka next future release, in this case 2.10.</p>
+
+
+<p>At <a title="NaturalGIS" href="http://www.naturalgis.pt/" target="_blank"><strong>NaturalGIS</strong></a> we do our share of effort, 
+especially regarding improvements for the QGIS &#8220;Processing&#8221; toolbox, and recently started 
+to <a title="NaturalGIS QGIS commit" href="https://github.com/qgis/QGIS/pull/1905" target="_blank"><strong>add</strong></a> 
+new geoprocessing tools for vectors. At the time we are writing the tools we added are:</p>
+
+
+<ul>
+<li>Buffer</li>
+<li>Single sided buffer (or offset lines)</li>
+<li>Clip by extent</li>
+<li>Clip by polygon</li>
+<li>Create points along lines</li>
+<li>Dissolve</li>
+</ul>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogrnewtools.png" alt="ogr2ogr geoprocessing tools for QGIS Processing toolbox">
+<figcaption style="font-size:10px;"><strong><em>New QGIS geoprocessing tools</em></strong></figcaption>
+</figure></p>
+
+<p>Some are completely new, like the <strong>Single sided buffer (or offset lines)</strong>, <strong>Clip (vector) by extent</strong> 
+(a similar tool is already available in QGIS but only to clip rasters layers) and <strong>Create points along lines</strong>, 
+others are not (<strong>Buffer</strong>, <strong>Clip by polygon</strong> and <strong>Dissolve</strong>) as there are already 
+plenty of alternatives in QGIS. The point here is that this &#8220;new&#8221; tools are quite faster than the already existing QGIS counterparts, 
+or they offer new options.</p>
+
+
+<p>For example the &#8220;Dissolve&#8221; tool is on average several times faster (up to 7 times, in our simple tests) than the QGIS counterpart, 
+moreover the tool has the ability to compute some statistics on numerical attributes. See the image below:</p>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogrdissolve.png" alt="ogr2ogr geoprocessing Dissolve tool">
+<figcaption style="font-size:10px;"><strong><em>Dissolve with stats</em></strong></figcaption>
+</figure></p>
+
+<p>Under the hood the work is done by that great software that is <a title="ogr2ogr" href="http://www.gdal.org/ogr2ogr.html" target="_blank">
+<strong>ogr2ogr</strong></a>. In this case is used to run <strong>spatial SQL queries</strong>, 
+using as engine <strong>SQLite/Spatialite</strong></p>
+
+
+<p>More of this ogr2ogr/sql based tools will be added in the next future, especially when a few missing features will be added
+to the QGIS Processing toolbox, meanwhile you can help us testing the above ones.</p>
+
+
+<p>Under MS Windows you can install the development version of QGIS using the 
+<a title="osgeo4w" href="http://trac.osgeo.org/osgeo4w/" target="_blank">
+<strong>OSGeo4W</strong></a> installer. Under 
+<a title="ubuntu" href="http://www.ubuntu.com/" target="_blank"><strong>Ubuntu GNU/Linux</strong></a> you can use the 
+<a title="QGIS nightly build" href="http://www2.qgis.org/en/site/forusers/alldownloads.html#ubuntu" target="_blank"><strong>nightly builds</strong></a> repository.</p>
+
+
+<p></span></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A new QGIS tool (based on ogr2ogr) to import vectors in PostGIS]]></title>
+    <link href="http://www.naturalgis.pt/2015/02/27/a-new-qgis-tool-based-on-ogr2ogr-to-import-vectors-in-postgis/"/>
+    <updated>2015-02-27T15:39:05+00:00</updated>
+    <id>http://www.naturalgis.pt/2015/02/27/a-new-qgis-tool-based-on-ogr2ogr-to-import-vectors-in-postgis</id>
+    <content type="html"><![CDATA[<p><span style="text-align:justify"></p>
+
+<p>In <a title="QGIS" href="http://www.qgis.org/" target="_blank"><strong>QGIS</strong></a> there are many tools that can be used to import vectors inside a <a title="PostGIS" href="http://www.postgis.net/" target="_blank"><strong>PostGIS</strong></a> database, each one has pros and cons:</p>
+
+
+<ul>
+<li><strong>SPIT</strong> core plugin: available since early QGIS releases but now unmaintained tool and therefore candidate to be removed from future QGIS releases. 
+It  has the advantage to allow import several vectors in one run, but on the other hand it does not have an option to launder table/columns names and is overall 
+quite slow especially for fair large vectors.</li>
+<li><strong>DB Manager</strong>: it has several pros, like supporting drag &amp; drop import and a few important other options, but misses to allow import 
+several vectors and is overall slow especially for fair large vectors.</li>
+<li><strong>QGIS browser</strong>: it allows import vectors using drag &amp; drop but as the above tools missed to allow multiple vectors import. 
+Overall slow especially for fair large vectors.</li>
+<li>Processing toolbox &#8221;<strong>Import into PostGIS</strong>&#8221;: it can import several vectors at once because, as any other tool in the QGIS <strong>Processing</strong> 
+toolbox, it can run in batch mode. Overall slow especially for fair large vectors.</li>
+</ul>
+
+
+<p>There are of course also command line alternatives, in particular 
+<a title="shp2pgsql" href="http://postgis.refractions.net/documentation/manual-1.3/ch04.html#id2571860" target="_blank"><strong>shp2pgsql</strong></a> 
+(together with <strong>psql</strong>) and 
+<a title="ogr2ogr" href="http://www.gdal.org/ogr2ogr.html" target="_blank"><strong>ogr2ogr</strong></a>. Each one is rich of options/switches and 
+they can be scripted to import several vectors in one go. While <em>shp2pgsql</em> is installed  
+were PostGIS is installed, usually it is not on common users desktop machines. 
+On the other hand <em>ogr2ogr</em> is installed and available on any machine where QGIS is installed because is part of the 
+<a title="GDAL/OGR" href="http://www.gdal.org/" target="_blank"><strong>GDAL/OGR</strong></a> libary, that is basic dependency of any QGIS installation.</p>
+
+
+<p>We compared how importing vectors in PostGIS performed using <em>ogr2ogr</em> compared to the tools available in QGIS, and then also compared to <em>shp2pgsql</em>. In short, the
+results are the following:</p>
+
+
+<ul>
+<li>even without recurring to any particular switch/trick, <em>ogr2ogr</em> is on average much more faster than any available tools available in QGIS.</li>
+<li><em>ogr2ogr</em> and <em>shp2pgsql</em> performed in a similar way.</li>
+</ul>
+
+
+<p>To compare <em>ogr2ogr</em> and <em>shp2pgsql</em> we used as input dataset a 4 million features (polygons) shapefile (1.3GB of space occupied) and also a small 
+subset of it (4000 features, 10MB) using PostGIS installed on the local machine (Ubuntu GNU/Linux 14.04).</p>
+
+
+<p>Without using any particular switch to make imports faster (like &#8220;-D&#8221; for shp2pgsql or &#8220;-config PG_USE_COPY YES&#8221; for ogr2ogr) ogr2ogr is much faster than shp2pgsql/psql 
+with the small dataset (2.5 seconds against 35 seconds).</p>
+
+
+<p>With the large dataset things gets the other way, with <em>shp2pgsql/psql</em> ending the task in 17 minutes against 19.5 minutes with <em>ogr2ogr</em>.</p>
+
+
+<p>Adding the options &#8220;-D&#8221; to <em>shp2pgsql</em> and &#8220;-config PG_USE_COPY YES&#8221; to ogr2ogr is possible to get a <strong>dramatic</strong> improvement of the performace of both tools: 
+<em>ogr2ogr</em> takes <strong>0.8 seconds</strong> to process the small dataset and <strong>2.21 minutes</strong> the process the big dataset, while <em>shp2pgsql/psql</em> 
+takes respectively <strong>24 seconds</strong> and <strong>1.56 minutes</strong>.</p>
+
+
+<p><em>ogr2ogr</em> seemed a good choice to create a new tool for QGIS to allow import vectors in a <strong>fast</strong> way. 
+We <a title=" NaturalGIS QGIS commit" href="https://github.com/qgis/QGIS/commit/97e796906f21f5e4ae5f750593e5ce5ddce028c3" target="_blank"><strong>implemented such tool</strong></a> 
+as part of the QGIS Processing toolbox and therefore is available the brand new QGIS 2.8 release.</p>
+
+
+<p>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogr1.png" alt="QGIS Processing tools to import vector layers in PostGIS"/>
+<figcaption style="font-size:10px;"><strong><em>The new tool(s) in the QGIS Processing toolbox</em></strong></figcaption>
+</figure>
+</p>
+
+
+<p>The tool also exposes options that are not usually available in any other QGIS tool. Aming the others: Vector dimensions, Append, Append and add new fields, Skip failures, Simplification, 
+Densification, Import selected features by extent, Import clipped features by extent and a few others.</p>
+
+
+<p>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogr2.png" alt="Tool GUI">
+<figcaption style="font-size:10px;"><strong><em>Tool GUI</em></strong></figcaption>
+</figure>
+</p>
+
+
+<p></span></p>
+]]></content>
+  </entry>
+  
+</feed>

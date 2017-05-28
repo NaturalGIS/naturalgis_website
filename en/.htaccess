@@ -1,0 +1,8 @@
+AddType text/html .html
+AddHandler server-parsed .html
+Options Indexes FollowSymLinks +Includes
+AddType application/x-httpd-php5 .html .htm .php
+ErrorDocument 404 /en/404.html
+Redirect 302 /en/training /en/training.html
+Redirect 302 /en/subscribe /en/subscribe.html
+Redirect 302 /en/calendar /en/calendar.html

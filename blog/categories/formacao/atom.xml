@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: formação | NaturalGIS Blog]]></title>
+  <link href="http://www.naturalgis.pt/categories/formacao/atom.xml" rel="self"/>
+  <link href="http://www.naturalgis.pt/"/>
+  <updated>2015-03-18T15:38:05+00:00</updated>
+  <id>http://www.naturalgis.pt/</id>
+  <author>
+    <name><![CDATA[naturalgis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Formação SIG: Produção cartográfica com QGIS]]></title>
+    <link href="http://www.naturalgis.pt/2015/03/04/formacao-sig-producao-cartografica-com-qgis/"/>
+    <updated>2015-03-04T13:10:06+00:00</updated>
+    <id>http://www.naturalgis.pt/2015/03/04/formacao-sig-producao-cartografica-com-qgis</id>
+    <content type="html"><![CDATA[<p><span style="text-align:justify"></p>
+
+<p>
+A <b>NaturalGIS</b> acrescentou à sua <a title="NaturalGIS formações QGIS" href="http://www.naturalgis.pt/formacoes.html" target="_blank"><strong>
+oferta de cursos QGIS</strong></a> uma formação de
+<a title="Produção cartográfica com QGIS" href="http://www.naturalgis.pt/formacoes.html#tr3" target="_blank"><strong>
+produção cartográfica</strong></a>, que permitirá aprender a produzir
+eficientemente mapas de elevada qualidade recorrendo às
+funcionalidades mais recentes de QGIS.
+</p>
+
+
+<p>
+O curso cobrirá as opções avançadas de simbologia para camadas
+vectoriais e raster e etiquetas, o compositor de mapas e automatização
+de produção cartográfica, entre outros. Este curso é ideal para
+aprender tirar o maior partido do QGIS para criar mapas temáticos e
+cartografia para os instrumentos de gestão territorial, como por
+exemplo, PDM, PP, PU, etc.
+</p>
+
+
+<p>
+A primeira edição terá lugar em <strong>Lisboa de 4 a 6 de Maio 2015</strong>.
+</p>
+
+
+<p style="text-align:left;">
+Mais informações em: <a title="Produção cartográfica com QGIS" href="http://www.naturalgis.pt/formacoes.html#tr3" target="_blank"><strong>
+http://www.naturalgis.pt/formacoes.html#tr3</strong></a>
+</p>
+
+
+<p style="text-align:left;">Inscrições em: 
+<a title="Inscrição no curso: Produção cartográfica com QGIS" href="http://www.naturalgis.pt/subscricao.html" target="_blank"><strong>
+http://www.naturalgis.pt/subscricao.html</strong></a>
+</p>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/qgis_cartografia.jpg" alt="Mapas espantosos com QGIS!">
+<figcaption style="font-size:10px;"><strong><em>Aprenda a criar mapas tematicos com QGIS</em></strong></figcaption>
+</figure></p>
+
+<p><p><b>Conteúdo Programático:</b><p/></p>
+
+<p><ol>
+<li>Controlar ordem das camadas</li>
+<li>Simbologia vectores</li>
+<li>Simbologia rasters</li>
+<li>Simbologia por categorias</li>
+<li>Simbologia por quantidades</li>
+<li>Simbologia baseada em regras</li>
+<li>Simbologia avançada - níveis</li>
+<li>Modos de rendering e transparência</li>
+<li>Etiquetas</li>
+<li>Criação de símbolos compostos</li>
+<li>Gestor de símbolos</li>
+<li>Gravar, Importar e exportar símbolos</li>
+<li>Compositor de impressão</li>
+<li>Elementos do mapa (Escala gráfica, Norte, Legenda,&hellip;)</li>
+<li>Grelhas de coordenadas</li>
+<li>Mapas de enquadramento</li>
+<li>Optimização da produção de cartografia</li>
+<li>Filtrar legenda consoante visibilidade</li>
+<li>A ferramenta &ldquo;atlas&rdquo;</li>
+<li>Criar séries de mapas com a ferramenta &ldquo;atlas&rdquo;</li>
+<li>Presets e estilos múltiplos</li>
+<li>Controlo dos elementos e formato do mapa através dos atributos</li>
+<li>Criação de cartogramas</li>
+<li>Criação automática de mapas de ocorrência</li>
+</ol>
+</span></p>
+]]></content>
+  </entry>
+  
+</feed>

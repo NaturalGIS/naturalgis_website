@@ -1,0 +1,5 @@
+AddType text/html .html
+AddHandler server-parsed .html
+Options Indexes FollowSymLinks +Includes
+AddType application/x-httpd-php5 .html .htm .php
+ErrorDocument 404 /blog/404.html

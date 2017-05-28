@@ -1,0 +1,1 @@
+var geojson_ng3857 = {"type":"FeatureCollection","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:EPSG::3857"}},"features":[{"type":"Feature","properties":{"POI":"NaturalGIS"},"geometry":{"type":"Point","coordinates":[-881416.383,4664009.976]}}]}

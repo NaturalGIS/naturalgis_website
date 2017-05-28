@@ -1,0 +1,123 @@
+<?php
+if(isset($_POST['submit'])){
+    $to = "giovanni.manghi@gmail.com"; // this is your Email address
+    $to2 = "vbneves@gmail.com"; // this is your Email address
+    $from = "info@naturalgis.pt"; // this is the sender's Email address
+    $name = $_POST['name'];
+    //$last_name = $_POST['apelido'];
+    //$address = $_POST['endereco'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $training = $_POST['training'];
+    $company = $_POST['company'];
+    $notes = $_POST['message'];
+    $invoice = $_POST['invoice'];
+    $subjectmail = "NaturalGIS, inscrição na formação: " . $training;
+    $message_formatted = "Data: " . date("c") . "\n" .
+                         "Nome: " . $name . "\n" .
+                         //"Apelido: " . $last_name . "\n" .
+                         //"Endereço: " . $address  . "\n" .
+                         "Telemóvel: " . $phone  . "\n" .
+                         "Email: " . $email  . "\n" .
+                         "Entidade: " . $company  . "\n" .                         
+                         "Curso: " . $training  . "\n" .
+                         "Dados para facturação: " . $invoice  . "\n" .
+                         "Notas: " . $notes  . "\n";
+
+  $headers .= "Reply-To: $from\r\n";
+  $headers .= "Return-Path: $from\r\n";
+  $headers .= "From: $from\r\n";
+  $headers .= "Organization: NaturalGIS\r\n";
+  $headers .= "MIME-Version: 1.0\r\n";
+  $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+  $headers .= "X-Priority: 3\r\n";
+  $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
+
+
+    if($_POST['name']=='' or $_POST['email'] == '') {
+    $found_error = 1;
+	}
+    else {
+    mail($to, $subjectmail, $message_formatted, $headers, "-f$from");
+    mail($to2,$subjectmail,$message_formatted,$headers, "-f$from");
+	}
+    }
+?>
+
+<?php include 'header.html';?>
+
+    <section id="feature"><a id="form">&nbsp;</a>
+        <div class="container">
+            <div class="center">
+                <p>&nbsp;</p>
+                <h2>Subscription form</h2>
+                <p class="lead">Subscribe one of our training courses</p>
+            </div>           
+            
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="contacto" class="contact-form" name="contact-form" method="post" action="subscricao.html#form" style="margin-top:-50px;">
+<?php
+if(isset($_POST['submit'])){
+
+    if($found_error == 1) {
+    echo '<h2 style="color:red;text-align:center;">Error</h2>';
+    }
+    else
+    {
+    echo '<h2 style="color:red;text-align:center;">Subscription to training course "' . $training . '" sent succesfully</h2>';
+    }
+    }
+?>                 
+                    <div class="col-sm-5 col-sm-offset-1"> 
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" name="name"  id="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email"  id="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone *</label>
+                            <input type="number" name="phone" id="phone" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Company/Institution *</label>
+                            <input type="text"  name="company" id="company" class="form-control" required="required">
+                        </div>                        
+                        <div class="form-group">
+                            <label>Training</label>
+			<select id="training" name="training" class="form-control">
+				<!--
+				<option value="Iniciação aos SIG com QGIS: 6 a 8 Abril 2015">Introduction to GIS with QGIS: 6 to 8 April 2015</option>
+				<option value="Análise SIG com QGIS: 20 a 22 Abril 2015">GIS analysis with QGIS: 20 to 22 April 2015</option>
+				<option value="Cartografia com QGIS: 4 a 6 Maio 2015">Cartography with QGIS: 4 to 6 May 2015</option>
+				<option value="Iniciação aos SIG com QGIS: 27 a 29 Maio 2015, Viseu">Introduction to GIS with QGIS: 27 to 29 May 2015, Viseu</option>			        
+			        <option value="Web Mapping com QGIS: 15 e 16 Junho 2015">WebGIS with QGIS: 15 to 16 June 2015, Lisbon</option>
+				<option value="Programação Python/QGIS: 17 e 19 Junho 2015, Lisboa">Python Programming with QGIS: 17 to 19 June 2015, Lisbon</option>
+			        -->				
+			        <option value="Gestão de dados com QGIS: 26 Junho 2015, Oiã (Oliveira do Bairro)">Data management with QGIS: 26 of June 2015, Oiã (Oliveira do Bairro)</option>
+			        <option value="Bases de dados geográficas">Spatial Databases</option>
+			</select>
+                        </div>  
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Data for invoice *</label>
+                            <input type="text" name="invoice" id="invoice" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Notes</label>
+                            <textarea name="message" id="message" class="form-control" rows="8"></textarea>
+                        </div>                        
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Send</button>
+                        </div>
+                    </div>
+                </form> 
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
+
+<?php include 'footer.html';?>

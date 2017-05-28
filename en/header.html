@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Especialistas em QGIS, o melhor e mais usado software SIG Open Source">
+    <meta name="author" content="NaturalGIS">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="NaturalGIS, Open Source GIS. Leader in solutions based on QGIS: training, development, support" lang="en" name="description" />
+    <meta content="NaturalGIS, SIG Open Source. Empresa líder em soluções baseadas em QGIS: formação, desenvolvimento, suporte" lang="pt_PT" name="description" />
+    <meta content="NaturalGIS, SIG Open Source. Empresa líder em soluções baseadas em QGIS: formação, desenvolvimento, suporte" lang="pt_BR" name="description" />
+    <meta content="Open Source, Free Software, Software Livre, Software Aberto, GIS, SIG, QGIS, Quantum GIS, GRASS, SAGA, OTB, PostGIS, PostgreSQL, OsGeo, OGC, support, bug fixing, migration, suporte, assistência, resolução bugs, migração, development, desenvolvimento, programação, training courses, formação, cursos, WebGIS, Web Mapping" name="keywords" />
+
+    <title>NaturalGIS</title>
+
+     <!-- core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="../images/ico/favicon.ico">
+    <!--
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    -->
+    
+<script>
+var anchor = location.hash;
+var pagename = location.href.split("/").slice(-1);
+</script>  
+</head><!--/head-->
+
+<body class="homepage">
+<?php include_once("analyticstracking.php") ?>
+    <header id="header">
+
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="../images/naturalgis_small.png" alt="NaturalGIS" style="margin-top:-10px; margin-bottom: 10px;"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li style="margin-right:-5px;" <?php if (basename($_SERVER['PHP_SELF']) == 'index.html') {echo 'class="active"';}?>><a href="index.html">Home</a></li>
+                        <li style="margin-right:-5px;" <?php if (basename($_SERVER['PHP_SELF']) == 'who.html') {echo 'class="active"';}?>><a href="who.html">About us</a></li>
+                       <script>
+                        if (anchor == '#services') {
+                        document.write('<li style=\"margin-right:-5px;\" class=\"active\"><a href=\"index.html#services\">Services</a></li>')
+                        } else {
+                        document.write('<li style=\"margin-right:-5px;\"><a href=\"index.html#services\">Services</a></li>')
+                        }
+                       </script> 
+                        <li style="margin-right:-5px;" class="dropdown <?php if ((basename($_SERVER['PHP_SELF']) == 'subscribe.html') OR (basename($_SERVER['PHP_SELF']) == 'training.html')) {echo 'active';}?>">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Training <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li <?php if (basename($_SERVER['PHP_SELF']) == 'training.html') {echo 'class="active"';}?>><a href="training.html">Contents</a></li>
+                                <li <?php if (basename($_SERVER['PHP_SELF']) == 'calendar.html') {echo 'class="active"';}?>><a href="calendar.html">Calendar</a></li>
+                                <li <?php if (basename($_SERVER['PHP_SELF']) == 'subscribe.html') {echo 'class="active"';}?>><a href="subscribe.html">Subscribe</a></li>
+                            </ul>
+                        </li>
+                        <li style="margin-right:-5px;"><a href="../blog/">Blog</a></li> 
+                        <li style="margin-right:-5px;" <?php if (basename($_SERVER['PHP_SELF']) == 'contacts.html') {echo 'class="active"';}?>><a href="contacts.html">Contacts</a></li>                        
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <img src="../images/uk.png" alt="English" />
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li role="presentation"><a href="../index.html" class="language" rel="pt-PT"><img src="../images/pt.png" alt="Português" /> Português</a></li>
+                <li role="presentation"><a href="index.html" class="language" rel="en-US"><img src="../images/uk.png" alt="English" /> English</a></li>
+            </ul>
+        </li>                                             
+                        </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: grids | NaturalGIS Blog]]></title>
+  <link href="http://www.naturalgis.pt/categories/grids/atom.xml" rel="self"/>
+  <link href="http://www.naturalgis.pt/"/>
+  <updated>2015-03-18T15:38:05+00:00</updated>
+  <id>http://www.naturalgis.pt/</id>
+  <author>
+    <name><![CDATA[naturalgis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Datum transformations with NTv2 grids in QGIS: the easy way]]></title>
+    <link href="http://www.naturalgis.pt/2015/03/09/datum-transformations-with-ntv2-grids-in-qgis-the-easy-way/"/>
+    <updated>2015-03-09T13:39:34+00:00</updated>
+    <id>http://www.naturalgis.pt/2015/03/09/datum-transformations-with-ntv2-grids-in-qgis-the-easy-way</id>
+    <content type="html"><![CDATA[<p><span style="text-align:justify"></p>
+
+<p>
+<a title="NTv2" href="http://en.wikipedia.org/wiki/NTv2" target="_blank"><strong>NTv2</strong></a>
+is a format/method to allow transform coordinates (and vector/raster layers) 
+from one coordinate reference system to a different one (involving a change of 
+<a title="Datum" href="http://en.wikipedia.org/wiki/Geodetic_datum" target="_blank"><strong>datum</strong></a>) with a small error: 
+the precision is usually around a few centimeters (or less) 
+and is much better than the one that can be obtained by reprojecting layers using the standard 
+coordinate reference systems definitions, as they are available in common GIS software/libraries/toolboxes.
+</p>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ntv2_transformation_precision.png" alt="Ntv2 Datum transformations precision">
+<figcaption style="font-size:10px;"><strong><em>An example of the precision given by NTv2 tranformations<br> compared
+to the one obtained by reprojecting layers using standard CRS definitions.</em></strong></figcaption>
+</figure>
+<br></p>
+
+<p>
+<strong>Note:</strong><i> This is a rather complex matter so you may want to read some tutorial about it. 
+One of the best we have ever read is this one [<a title="Coordinate transformations explained" 
+href="http://qgis.pt/blog/2014/07/13/transformacao-de-coordenadas-e-utilizacao-das-grelhas-ntv2-no-qgis/" target="_blank"><strong>Portuguese</strong></a> or 
+<a title="Coordinate transformations explained" href="https://translate.google.pt/translate?sl=pt&tl=en&js=y&prev=_t&hl=pt-PT&ie=UTF-8&u=http%3A%2F%2Fqgis.pt%2Fblog%2F2014%2F07%2F13%2Ftransformacao-de-coordenadas-e-utilizacao-das-grelhas-ntv2-no-qgis%2F&edit-text=" target="_blank"><strong>English</strong></a>].
+</i>
+</p>
+
+
+
+
+<p>
+The NTv2 method make use of binary files (.gsb) called &#8221;<strong>grids</strong>&#8221; and is fully supported by libraries like 
+<a title="Proj4" href="http://trac.osgeo.org/proj/" target="_blank"><strong>Proj</strong></a> 
+and software like 
+<a title="GDAL/OGR" href="http://www.gdal.org/" target="_blank"><strong>GDAL/OGR</strong></a>. 
+Until not long ago the availability of these grids was scarce but in recent 
+times they have become quite easy to find and are freely available for many countries.
+</p>
+
+
+
+
+<p>
+Unfortunately using this grid is not easy for the common GIS user: both command line utilities and Desktop GIS software need
+custom CRS definitions, downloading and copying files to specific 
+locations and eventually do more configurations. See for example the following tutorials for 
+<a title="QGIS Ntv2" href="http://sourcepole.ch/ntv2-transformations-with-qgis" target="_blank"><strong>QGIS</strong></a> or
+<a title="ArcGIS NTv2" href="http://support.esri.com/en/knowledgebase/techarticles/detail/35152" target="_blank"><strong>ArcGIS</strong></a>.
+</p>
+
+
+
+
+<p>
+For the cases when grid files are freely available and redistributable we implemented an easier solution in the form of a 
+<a title="QGIS Ntv2 transformations plugin" href="http://plugins.qgis.org/plugins/ntv2_transformations/" target="_blank"><strong>
+QGIS plugin for its Processing toolbox</strong></a>. With this plugin the operation is as simple
+as just selecting the coordinate reference system of the input layer and
+the transformation (direct or inverse).
+</p>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ntv2_transformation_gui.png" alt="Ntv2 Datum transformations for the QGIS Processing toolbox">
+<figcaption style="font-size:10px;"><strong><em>Ntv2 Datum transformations GUI</em></strong></figcaption>
+</figure>
+<br></p>
+
+<p>
+The plugin already comes with support for grids/transformations for a few countries 
+and more will be added given that ntv2 grids are freely available and redistributable.
+If you want to have a certain grid/transformation/country added please open a request here 
+</p>
+
+
+
+
+<p>
+<a title="QGIS Ntv2 transformations plugin" href="https://github.com/NaturalGIS/ntv2_transformations/issues" target="_blank"><strong>
+https://github.com/NaturalGIS/ntv2_transformations/issues
+</strong></a>
+</p>
+
+
+
+
+<p>
+including all the necessary details.
+</p>
+
+
+<p><figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/qgis_ntv2_transformations_plugin.png" alt="Ntv2 Datum transformations for the QGIS Processing toolbox">
+<figcaption style="font-size:10px;"><strong><em>Ntv2 Datum transformations for the QGIS Processing toolbox</em></strong></figcaption>
+</figure>
+<br></p>
+
+<p>
+<strong>Note2:</strong><i> The plugin was directly derived from a 
+<a title="QGIS Ntv2 transformations for Portugal" href="http://qgis.pt/plugins.html" target="_blank">
+<strong>similar one</strong></a> that we helped develop for the 
+Portuguese QGIS community/user group for the specific context of datum transformations for Portugal. 
+At some point we felt that this plugin could have been useful also for users from other countries so we released an &#8220;international&#8221; version of it.
+</i></p>
+
+
+<p></span></p>
+]]></content>
+  </entry>
+  
+</feed>

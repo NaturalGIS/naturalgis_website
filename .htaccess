@@ -1,0 +1,11 @@
+AddType text/html .html
+AddHandler server-parsed .html
+Options Indexes FollowSymLinks +Includes
+AddType application/x-httpd-php5 .html .htm .php
+ErrorDocument 404 /404.html
+Redirect 302 /cursos /formacoes.html
+Redirect 302 /subscricao /subscricao.html
+Redirect 302 /calendario /calendario.html
+Redirect 302 /formacoes /formacoes.html
+Redirect 302 /lisboa /downloads/QGIS_CICLO_LISBOA.pdf
+Redirect 302 /viseu /downloads/QGIS_CICLO_VISEU.pdf

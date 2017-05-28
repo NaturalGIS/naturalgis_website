@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>NaturalGIS Blog</title>
+    <meta name="author" content="NaturalGIS">
+    <meta content="NaturalGIS, Open Source GIS. Leader in solutions based on QGIS: training, development, support" lang="en" name="description" />
+    <meta content="Open Source, Free Software, Software Livre, Software Aberto, GIS, SIG, QGIS, Quantum GIS, GRASS, SAGA, OTB, PostGIS, PostgreSQL, OsGeo, OGC, support, bug fixing, migration, suporte, assistência, resolução bugs, migração, development, desenvolvimento, programação, training courses, formação, cursos, WebGIS, Web Mapping" name="keywords" />
+  
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.naturalgis.pt">
+  <link rel="shortcut icon" href="http://www.naturalgis.pt/images/ico/favicon.ico">
+  <link href="http://www.naturalgis.pt/blog/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://www.naturalgis.pt/blog/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="http://www.naturalgis.pt/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/animate.min.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/prettyPhoto.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/main.css" rel="stylesheet">
+    <link href="http://www.naturalgis.pt/css/responsive.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+    padding-left: 0px;
+    padding-right: 0px;
+    }
+    h1 {
+      margin-bottom: 15px;
+      color: black;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+    .well {
+      margin-top: 20px;
+    }
+    .entry-title {
+    color: black;
+    }
+  </style>
+  <script src="/blog/javascripts/libs/jquery.js"></script>
+  <script src="/blog/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/blog/javascripts/libs/bootstrap.js"></script>
+  <script src="/blog/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/blog/atom.xml" rel="alternate" title="NaturalGIS Blog" type="application/atom+xml">
+  
+  
+ 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-60077770-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body   >
+  <nav role="navigation">        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://www.naturalgis.pt/"><img src="http://www.naturalgis.pt/images/naturalgis_small.png" alt="NaturalGIS" style="margin-top:-10px; margin-bottom: 10px;"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li style="margin-right:-5px;"><a href="http://www.naturalgis.pt/en">Home</a></li>
+                        <li style="margin-right:-5px;"><a href="http://www.naturalgis.pt/en/who.html">About us</a></li>
+			<li style="margin-right:-5px;"><a href="http://www.naturalgis.pt/en/index.html#services">Services</a></li> 
+                        <li style="margin-right:-5px;"><a href="http://www.naturalgis.pt/en/training.html">Training</a></li>
+                        <li style="margin-right:-5px;" class="active"><a href="http://www.naturalgis.pt/blog/index.html">Blog</a></li> 
+                        <li style="margin-right:-5px;"><a href="http://www.naturalgis.pt/en/contacts.html">Contacts</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav--></nav>
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
+  
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/18/3rd-portugal-qgis-user-meeting-covilha-and-qgis-conference-2015-university-of-copenhagen/">3rd Portugal QGIS User Meeting (Covilhã) and QGIS‬ Conference 2015 (University of Copenhagen)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-18T15:07:58+00:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:07 pm</span></time>
+        
+         | <a href="/blog/2015/03/18/3rd-portugal-qgis-user-meeting-covilha-and-qgis-conference-2015-university-of-copenhagen/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><span style="text-align:justify">
+<p>
+In the next weeks/months are due a couple of  <strong>QGIS</strong> events where <strong>NaturalGIS</strong> will be present with presentations and workshops.
+</p>
+
+<p>
+May 18th and 19th we will be at the 
+<a title="QGIS Conference 2015" href="https://qgis2015.wordpress.com/" target="_blank"><strong>QGIS Conference 2015</strong></a> 
+organized by the University of Copenhagen, Forestry College, that will take place in Nødebo, Denmark.
+This event is directly linked with the 
+<a title="QGIS Developer Meeting" href="https://hub.qgis.org/wiki/quantum-gis/13_QGIS_Developer_Meeting_in_Copenhagen_2015" target="_blank"><strong>
+13th QGIS Developer Meeting</strong></a>, that will take place from May 20 to 22 in the same location.
+</p>
+<p>
+At the QGIS Conference we will make a presentation about <strong>how to get help/support for QGIS</strong> and a workshop about 
+<strong>QGIS Server and how to publish OGC services 
+(WMS/WFS/WCS) and webgis applications</strong>.
+</p>
+
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/qgis_dk.png" alt="QGIS Conference 2015">
+</figure>
+<br>
+<p>
+June 5th we will be in Covilhã, Serra da Estrela, Portugal, to join the 
+<a title="3rd Portugal QGIS user meeting" href="http://qgis.pt/eventos.html" target="_blank"><strong>3rd Portugal QGIS user meeting</strong></a>
+where we also will make a presentation (the same as in Nødebo) and a workshop about using the QGIS Processing toolbox.
+</p>
+
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/qgis_pt.png" alt="3rd Portugal QGIS user meeting">
+</figure>
+
+</span></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/09/datum-transformations-with-ntv2-grids-in-qgis-the-easy-way/">Datum Transformations With NTv2 Grids in QGIS: The Easy Way</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-09T13:39:34+00:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:39 pm</span></time>
+        
+         | <a href="/blog/2015/03/09/datum-transformations-with-ntv2-grids-in-qgis-the-easy-way/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><span style="text-align:justify">
+<p>
+<a title="NTv2" href="http://en.wikipedia.org/wiki/NTv2" target="_blank"><strong>NTv2</strong></a>
+is a format/method to allow transform coordinates (and vector/raster layers) 
+from one coordinate reference system to a different one (involving a change of 
+<a title="Datum" href="http://en.wikipedia.org/wiki/Geodetic_datum" target="_blank"><strong>datum</strong></a>) with a small error: 
+the precision is usually around a few centimeters (or less) 
+and is much better than the one that can be obtained by reprojecting layers using the standard 
+coordinate reference systems definitions, as they are available in common GIS software/libraries/toolboxes.
+</p>
+
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ntv2_transformation_precision.png" alt="Ntv2 Datum transformations precision">
+<figcaption style="font-size:10px;"><strong><em>An example of the precision given by NTv2 tranformations<br> compared
+to the one obtained by reprojecting layers using standard CRS definitions.</em></strong></figcaption>
+</figure>
+<br>
+
+<p>
+<strong>Note:</strong><i> This is a rather complex matter so you may want to read some tutorial about it. 
+One of the best we have ever read is this one [<a title="Coordinate transformations explained" 
+href="http://qgis.pt/blog/2014/07/13/transformacao-de-coordenadas-e-utilizacao-das-grelhas-ntv2-no-qgis/" target="_blank"><strong>Portuguese</strong></a> or 
+<a title="Coordinate transformations explained" href="https://translate.google.pt/translate?sl=pt&tl=en&js=y&prev=_t&hl=pt-PT&ie=UTF-8&u=http%3A%2F%2Fqgis.pt%2Fblog%2F2014%2F07%2F13%2Ftransformacao-de-coordenadas-e-utilizacao-das-grelhas-ntv2-no-qgis%2F&edit-text=" target="_blank"><strong>English</strong></a>].
+</i>
+</p>
+
+
+<p>
+The NTv2 method make use of binary files (.gsb) called &#8221;<strong>grids</strong>&#8221; and is fully supported by libraries like 
+<a title="Proj4" href="http://trac.osgeo.org/proj/" target="_blank"><strong>Proj</strong></a> 
+and software like 
+<a title="GDAL/OGR" href="http://www.gdal.org/" target="_blank"><strong>GDAL/OGR</strong></a>. 
+Until not long ago the availability of these grids was scarce but in recent 
+times they have become quite easy to find and are freely available for many countries.
+</p>
+
+
+
+<p>
+Unfortunately using this grid is not easy for the common GIS user: both command line utilities and Desktop GIS software need
+custom CRS definitions, downloading and copying files to specific 
+locations and eventually do more configurations. See for example the following tutorials for 
+<a title="QGIS Ntv2" href="http://sourcepole.ch/ntv2-transformations-with-qgis" target="_blank"><strong>QGIS</strong></a> or
+<a title="ArcGIS NTv2" href="http://support.esri.com/en/knowledgebase/techarticles/detail/35152" target="_blank"><strong>ArcGIS</strong></a>.
+</p>
+
+
+<p>
+For the cases when grid files are freely available and redistributable we implemented an easier solution in the form of a 
+<a title="QGIS Ntv2 transformations plugin" href="http://plugins.qgis.org/plugins/ntv2_transformations/" target="_blank"><strong>
+QGIS plugin for its Processing toolbox</strong></a>. With this plugin the operation is as simple
+as just selecting the coordinate reference system of the input layer and
+the transformation (direct or inverse).
+</p>
+
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ntv2_transformation_gui.png" alt="Ntv2 Datum transformations for the QGIS Processing toolbox">
+<figcaption style="font-size:10px;"><strong><em>Ntv2 Datum transformations GUI</em></strong></figcaption>
+</figure>
+<br>
+
+<p>
+The plugin already comes with support for grids/transformations for a few countries 
+and more will be added given that ntv2 grids are freely available and redistributable.
+If you want to have a certain grid/transformation/country added please open a request here 
+</p>
+
+<p>
+<a title="QGIS Ntv2 transformations plugin" href="https://github.com/NaturalGIS/ntv2_transformations/issues" target="_blank"><strong>
+https://github.com/NaturalGIS/ntv2_transformations/issues
+</strong></a>
+</p>
+
+<p>
+including all the necessary details.
+</p>
+
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/qgis_ntv2_transformations_plugin.png" alt="Ntv2 Datum transformations for the QGIS Processing toolbox">
+<figcaption style="font-size:10px;"><strong><em>Ntv2 Datum transformations for the QGIS Processing toolbox</em></strong></figcaption>
+</figure>
+<br>
+
+<p>
+<strong>Note2:</strong><i> The plugin was directly derived from a 
+<a title="QGIS Ntv2 transformations for Portugal" href="http://qgis.pt/plugins.html" target="_blank">
+<strong>similar one</strong></a> that we helped develop for the 
+Portuguese QGIS community/user group for the specific context of datum transformations for Portugal. 
+At some point we felt that this plugin could have been useful also for users from other countries so we released an &#8220;international&#8221; version of it.
+</i></p>
+
+</span></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/04/formacao-sig-producao-cartografica-com-qgis/">Formação SIG: Produção Cartográfica Com QGIS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-04T13:10:06+00:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:10 pm</span></time>
+        
+         | <a href="/blog/2015/03/04/formacao-sig-producao-cartografica-com-qgis/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><span style="text-align:justify">
+<p>
+A <b>NaturalGIS</b> acrescentou à sua <a title="NaturalGIS formações QGIS" href="http://www.naturalgis.pt/formacoes.html" target="_blank"><strong>
+oferta de cursos QGIS</strong></a> uma formação de
+<a title="Produção cartográfica com QGIS" href="http://www.naturalgis.pt/formacoes.html#tr3" target="_blank"><strong>
+produção cartográfica</strong></a>, que permitirá aprender a produzir
+eficientemente mapas de elevada qualidade recorrendo às
+funcionalidades mais recentes de QGIS.
+</p>
+<p>
+O curso cobrirá as opções avançadas de simbologia para camadas
+vectoriais e raster e etiquetas, o compositor de mapas e automatização
+de produção cartográfica, entre outros. Este curso é ideal para
+aprender tirar o maior partido do QGIS para criar mapas temáticos e
+cartografia para os instrumentos de gestão territorial, como por
+exemplo, PDM, PP, PU, etc.
+</p>
+<p>
+A primeira edição terá lugar em <strong>Lisboa de 4 a 6 de Maio 2015</strong>.
+</p>
+<p style="text-align:left;">
+Mais informações em: <a title="Produção cartográfica com QGIS" href="http://www.naturalgis.pt/formacoes.html#tr3" target="_blank"><strong>
+http://www.naturalgis.pt/formacoes.html#tr3</strong></a>
+</p>
+<p style="text-align:left;">Inscrições em: 
+<a title="Inscrição no curso: Produção cartográfica com QGIS" href="http://www.naturalgis.pt/subscricao.html" target="_blank"><strong>
+http://www.naturalgis.pt/subscricao.html</strong></a>
+</p>
+
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/qgis_cartografia.jpg" alt="Mapas espantosos com QGIS!">
+<figcaption style="font-size:10px;"><strong><em>Aprenda a criar mapas tematicos com QGIS</em></strong></figcaption>
+</figure>
+
+<p><b>Conteúdo Programático:</b><p/>
+
+<ol>
+<li>Controlar ordem das camadas</li>
+<li>Simbologia vectores</li>
+<li>Simbologia rasters</li>
+<li>Simbologia por categorias</li>
+<li>Simbologia por quantidades</li>
+<li>Simbologia baseada em regras</li>
+<li>Simbologia avançada - níveis</li>
+<li>Modos de rendering e transparência</li>
+<li>Etiquetas</li>
+<li>Criação de símbolos compostos</li>
+<li>Gestor de símbolos</li>
+<li>Gravar, Importar e exportar símbolos</li>
+<li>Compositor de impressão</li>
+<li>Elementos do mapa (Escala gráfica, Norte, Legenda,&#8230;)</li>
+<li>Grelhas de coordenadas</li>
+<li>Mapas de enquadramento</li>
+<li>Optimização da produção de cartografia</li>
+<li>Filtrar legenda consoante visibilidade</li>
+<li>A ferramenta &#8220;atlas&#8221;</li>
+<li>Criar séries de mapas com a ferramenta &#8220;atlas&#8221;</li>
+<li>Presets e estilos múltiplos</li>
+<li>Controlo dos elementos e formato do mapa através dos atributos</li>
+<li>Criação de cartogramas</li>
+<li>Criação automática de mapas de ocorrência</li> 
+</ol>
+</span></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/28/a-qgis-plugin-to-run-common-spatial-queries-with-postgis/">A QGIS Plugin to Run (Common) Spatial Queries With PostGIS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-28T12:26:17+00:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:26 pm</span></time>
+        
+         | <a href="/blog/2015/02/28/a-qgis-plugin-to-run-common-spatial-queries-with-postgis/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><span style="text-align:justify">
+<p>QGIS <a title="QGIS Processing Toolbox" href="http://docs.qgis.org/2.6/en/docs/training_manual/processing/index.html" target="_blank"><strong>
+Processing toolbox</strong></a> is extremely flexible and it allows easily to implement QGIS tools (with a GUI) that
+are based on command line utilities (see  
+<a title="New QGIS geoprocessing tools" href="http://www.naturalgis.pt/blog/2015/02/27/new-geoprocessing-tools-in-the-qgis-processing-toolbox/">
+<strong>this</strong></a> and 
+<a title="Import vectors in PostGIS, the fast way" href="http://www.naturalgis.pt/blog/2015/02/27/a-new-qgis-tool-based-on-ogr2ogr-to-import-vectors-in-postgis/">
+<strong>this</strong></a>).</p>
+<p>When the underlying command line program is 
+<a title="ogr2ogr" href="http://www.gdal.org/ogr2ogr.html" target="_blank"><strong>ogr2ogr</strong></a> 
+(or any other <a title="GDAL/OGR" href="http://www.gdal.org/" target="_blank"><strong>GDAL/OGR</strong></a> utility) 
+possibilities become endeless. For example <strong>ogr2ogr</strong> can be used to convert formats or run arbitrary (Spatial) SQL queries.</p>
+<p>One possibility is to run Spatial SQL queries using input PostGIS layers and getting as output a PostGIS layer. The intersting
+bit is that the Spatial SQL query will be run <strong>by the server/machine</strong> (where the input layers are stored), 
+so possibly <strong>not</strong> by the destkop machine where you are running ogr2ogr.</p>
+<p>Usually to run a (Spatial) SQL query in PostGIS a user would open one of the many SQL shells available (PgAdmin, QGIS DB Manager,
+phppgadmin, psql, etc.) and run something like the following:</p>
+<br>
+<code>
+CREATE TABLE dissolved AS<br>
+SELECT attribute1,(ST_Dump(ST_Union(a.geom))).geom::geometry(Polygon,4326) as geom<br>
+FROM input_table a<br>
+GROUP BY attribute1;
+</code>
+<br>
+<br>
+<p>and that is ok for us geo-geeks, but what about average Jane/Joe?</p>
+<p>Isn&#8217;t this much easier?</p>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/dissolve.png" alt="Dissolve PostGIS polygons">
+<figcaption style="font-size:10px;"><strong><em>Dissolve PostGIS polygons</em></strong></figcaption>
+</figure>
+<br>
+<p>With <a title="A QGIS plugin to allow users do geoprocessing operations with PostGIS input layers"  
+href="https://github.com/NaturalGIS/postgis_geoprocessing" target="_blank">this plugin</a> for the QGIS Processing 
+toolbox (available in the official QGIS plugin repository) we aim to bring into QGIS a set of tools to allow basic PostGIS users
+to run common queries (Dissolve, Clip, Difference, etc.), using as input PostGIS layer and getting as output PostGIS layer(s).</p>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/postgisprocessing.png" alt="PostGIS QGIS Processing tools">
+<figcaption style="font-size:10px;"><strong><em>PostGIS QGIS Processing tools</em></strong></figcaption>
+</figure>
+<p>Please note that the plugin is still in the early stages of development and that it will be greatly improved once
+the Processing toolbox will support features like multi-attribute selection, adding to (QGIS) map output layers other than shapefiles, and
+others.</p>
+</span></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/27/new-geoprocessing-tools-in-the-qgis-processing-toolbox/">New Geoprocessing Tools in the QGIS Processing Toolbox</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-27T19:25:07+00:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:25 pm</span></time>
+        
+         | <a href="/blog/2015/02/27/new-geoprocessing-tools-in-the-qgis-processing-toolbox/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><span style="text-align:justify">
+<p><a title="QGIS" href="http://www.qgis.org/" target="_blank"><strong>QGIS</strong></a> 2.8 was not officially announced yet and, 
+as always happens in the QGIS project, new features are already being added to QGIS master, aka next future release, in this case 2.10.</p>
+<p>At <a title="NaturalGIS" href="http://www.naturalgis.pt/" target="_blank"><strong>NaturalGIS</strong></a> we do our share of effort, 
+especially regarding improvements for the QGIS &#8220;Processing&#8221; toolbox, and recently started 
+to <a title="NaturalGIS QGIS commit" href="https://github.com/qgis/QGIS/pull/1905" target="_blank"><strong>add</strong></a> 
+new geoprocessing tools for vectors. At the time we are writing the tools we added are:</p>
+<ul>
+<li>Buffer</li>
+<li>Single sided buffer (or offset lines)</li>
+<li>Clip by extent</li>
+<li>Clip by polygon</li>
+<li>Create points along lines</li>
+<li>Dissolve</li>
+</ul>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogrnewtools.png" alt="ogr2ogr geoprocessing tools for QGIS Processing toolbox">
+<figcaption style="font-size:10px;"><strong><em>New QGIS geoprocessing tools</em></strong></figcaption>
+</figure>
+<p>Some are completely new, like the <strong>Single sided buffer (or offset lines)</strong>, <strong>Clip (vector) by extent</strong> 
+(a similar tool is already available in QGIS but only to clip rasters layers) and <strong>Create points along lines</strong>, 
+others are not (<strong>Buffer</strong>, <strong>Clip by polygon</strong> and <strong>Dissolve</strong>) as there are already 
+plenty of alternatives in QGIS. The point here is that this &#8220;new&#8221; tools are quite faster than the already existing QGIS counterparts, 
+or they offer new options.</p>
+<p>For example the &#8220;Dissolve&#8221; tool is on average several times faster (up to 7 times, in our simple tests) than the QGIS counterpart, 
+moreover the tool has the ability to compute some statistics on numerical attributes. See the image below:</p>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogrdissolve.png" alt="ogr2ogr geoprocessing Dissolve tool">
+<figcaption style="font-size:10px;"><strong><em>Dissolve with stats</em></strong></figcaption>
+</figure>
+<p>Under the hood the work is done by that great software that is <a title="ogr2ogr" href="http://www.gdal.org/ogr2ogr.html" target="_blank">
+<strong>ogr2ogr</strong></a>. In this case is used to run <strong>spatial SQL queries</strong>, 
+using as engine <strong>SQLite/Spatialite</strong></p>
+<p>More of this ogr2ogr/sql based tools will be added in the next future, especially when a few missing features will be added
+to the QGIS Processing toolbox, meanwhile you can help us testing the above ones.</p>
+<p>Under MS Windows you can install the development version of QGIS using the 
+<a title="osgeo4w" href="http://trac.osgeo.org/osgeo4w/" target="_blank">
+<strong>OSGeo4W</strong></a> installer. Under 
+<a title="ubuntu" href="http://www.ubuntu.com/" target="_blank"><strong>Ubuntu GNU/Linux</strong></a> you can use the 
+<a title="QGIS nightly build" href="http://www2.qgis.org/en/site/forusers/alldownloads.html#ubuntu" target="_blank"><strong>nightly builds</strong></a> repository.</p>
+</span></div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2015/02/27/a-new-qgis-tool-based-on-ogr2ogr-to-import-vectors-in-postgis/">A New QGIS Tool (Based on Ogr2ogr) to Import Vectors in PostGIS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-02-27T15:39:05+00:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:39 pm</span></time>
+        
+         | <a href="/blog/2015/02/27/a-new-qgis-tool-based-on-ogr2ogr-to-import-vectors-in-postgis/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><span style="text-align:justify">
+<p>In <a title="QGIS" href="http://www.qgis.org/" target="_blank"><strong>QGIS</strong></a> there are many tools that can be used to import vectors inside a <a title="PostGIS" href="http://www.postgis.net/" target="_blank"><strong>PostGIS</strong></a> database, each one has pros and cons:</p>
+<ul>
+<li><strong>SPIT</strong> core plugin: available since early QGIS releases but now unmaintained tool and therefore candidate to be removed from future QGIS releases. 
+It  has the advantage to allow import several vectors in one run, but on the other hand it does not have an option to launder table/columns names and is overall 
+quite slow especially for fair large vectors.</li>
+<li><strong>DB Manager</strong>: it has several pros, like supporting drag &amp; drop import and a few important other options, but misses to allow import 
+several vectors and is overall slow especially for fair large vectors.</li>
+<li><strong>QGIS browser</strong>: it allows import vectors using drag &amp; drop but as the above tools missed to allow multiple vectors import. 
+Overall slow especially for fair large vectors.</li>
+<li>Processing toolbox &#8221;<strong>Import into PostGIS</strong>&#8221;: it can import several vectors at once because, as any other tool in the QGIS <strong>Processing</strong> 
+toolbox, it can run in batch mode. Overall slow especially for fair large vectors.</li>
+</ul>
+<p>There are of course also command line alternatives, in particular 
+<a title="shp2pgsql" href="http://postgis.refractions.net/documentation/manual-1.3/ch04.html#id2571860" target="_blank"><strong>shp2pgsql</strong></a> 
+(together with <strong>psql</strong>) and 
+<a title="ogr2ogr" href="http://www.gdal.org/ogr2ogr.html" target="_blank"><strong>ogr2ogr</strong></a>. Each one is rich of options/switches and 
+they can be scripted to import several vectors in one go. While <em>shp2pgsql</em> is installed  
+were PostGIS is installed, usually it is not on common users desktop machines. 
+On the other hand <em>ogr2ogr</em> is installed and available on any machine where QGIS is installed because is part of the 
+<a title="GDAL/OGR" href="http://www.gdal.org/" target="_blank"><strong>GDAL/OGR</strong></a> libary, that is basic dependency of any QGIS installation.</p>
+<p>We compared how importing vectors in PostGIS performed using <em>ogr2ogr</em> compared to the tools available in QGIS, and then also compared to <em>shp2pgsql</em>. In short, the
+results are the following:</p>
+<ul>
+<li>even without recurring to any particular switch/trick, <em>ogr2ogr</em> is on average much more faster than any available tools available in QGIS.</li>
+<li><em>ogr2ogr</em> and <em>shp2pgsql</em> performed in a similar way.</li>
+</ul>
+<p>To compare <em>ogr2ogr</em> and <em>shp2pgsql</em> we used as input dataset a 4 million features (polygons) shapefile (1.3GB of space occupied) and also a small 
+subset of it (4000 features, 10MB) using PostGIS installed on the local machine (Ubuntu GNU/Linux 14.04).</p>
+<p>Without using any particular switch to make imports faster (like &#8220;-D&#8221; for shp2pgsql or &#8220;-config PG_USE_COPY YES&#8221; for ogr2ogr) ogr2ogr is much faster than shp2pgsql/psql 
+with the small dataset (2.5 seconds against 35 seconds).</p>
+<p>With the large dataset things gets the other way, with <em>shp2pgsql/psql</em> ending the task in 17 minutes against 19.5 minutes with <em>ogr2ogr</em>.</p>
+<p>Adding the options &#8220;-D&#8221; to <em>shp2pgsql</em> and &#8220;-config PG_USE_COPY YES&#8221; to ogr2ogr is possible to get a <strong>dramatic</strong> improvement of the performace of both tools: 
+<em>ogr2ogr</em> takes <strong>0.8 seconds</strong> to process the small dataset and <strong>2.21 minutes</strong> the process the big dataset, while <em>shp2pgsql/psql</em> 
+takes respectively <strong>24 seconds</strong> and <strong>1.56 minutes</strong>.</p>
+<p><em>ogr2ogr</em> seemed a good choice to create a new tool for QGIS to allow import vectors in a <strong>fast</strong> way. 
+We <a title=" NaturalGIS QGIS commit" href="https://github.com/qgis/QGIS/commit/97e796906f21f5e4ae5f750593e5ce5ddce028c3" target="_blank"><strong>implemented such tool</strong></a> 
+as part of the QGIS Processing toolbox and therefore is available the brand new QGIS 2.8 release.</p>
+<p>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogr1.png" alt="QGIS Processing tools to import vector layers in PostGIS"/>
+<figcaption style="font-size:10px;"><strong><em>The new tool(s) in the QGIS Processing toolbox</em></strong></figcaption>
+</figure>
+</p>
+<p>The tool also exposes options that are not usually available in any other QGIS tool. Aming the others: Vector dimensions, Append, Append and add new fields, Skip failures, Simplification, 
+Densification, Import selected features by extent, Import clipped features by extent and a few others.</p>
+<p>
+<figure style="text-align: center">
+<img src="http://www.naturalgis.pt/blog/images/ogr2.png" alt="Tool GUI">
+<figcaption style="font-size:10px;"><strong><em>Tool GUI</em></strong></figcaption>
+</figure>
+</p>
+</span></div>
+  
+  
+
+
+    </article>
+  
+  <ul class="pager">
+    
+          <li>&nbsp;</li>
+    
+  </ul>
+</div>
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/18/3rd-portugal-qgis-user-meeting-covilha-and-qgis-conference-2015-university-of-copenhagen/">3rd Portugal QGIS user meeting (Covilhã) and QGIS‬ Conference 2015 (University of Copenhagen)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/09/datum-transformations-with-ntv2-grids-in-qgis-the-easy-way/">Datum transformations with NTv2 grids in QGIS: the easy way</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/04/formacao-sig-producao-cartografica-com-qgis/">Formação SIG: Produção cartográfica com QGIS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/28/a-qgis-plugin-to-run-common-spatial-queries-with-postgis/">A QGIS plugin to run (common) spatial queries with PostGIS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/27/new-geoprocessing-tools-in-the-qgis-processing-toolbox/">New geoprocessing tools in the QGIS Processing toolbox</a>
+      </li>
+    
+  </ul>
+</section>
+
+    <ul class="pager">
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      <li><a href="http://www.naturalgis.pt/blog/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+    </ul>
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    Site created with <a target="_blank" href="http://shapebootstrap.net/" title="Bootstrap"><b>Bootstrap</b></a>.<br>© Copyright 2015, NaturalGIS (NIF PT508912032)
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="http://www.naturalgis.pt/en/index.html">Home</a></li>
+                        <li><a href="http://www.naturalgis.pt/en/contacts.html">Contacts</a></li>
+                    </ul>
+                            <ul style="margin-left:auto;marign-right:auto;font-size:30px;">
+                                <li><a href="https://www.facebook.com/naturalgis"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/naturalgis"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/naturalgis"><i class="fa fa-linkedin"></i></a></li> 
+                            </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'naturalgis';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
